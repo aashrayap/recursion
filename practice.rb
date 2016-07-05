@@ -18,8 +18,34 @@ def factorial_iterative(n)
 	return holder
 end
 
-value=factorial_recursive(5)
-print value
+# value=factorial_recursive(5)
+# print value
 
-buddy=factorial_iterative(5)
-print buddy
+# buddy=factorial_iterative(5)
+# print buddy
+
+require 'pry'
+def sumdig_recursive(n)
+  if n<10
+  	return n
+  else
+  	sum = n%10 + sumdig_recursive(n/10)
+  end
+end
+
+def sumdig_iterative(n)
+  sum=0
+  while n>0
+    sum=sum+n%10
+    n/=10
+  end
+  return sum
+end
+
+
+hello=sumdig_recursive(11)
+print hello
+
+
+yo=sumdig_iterative(11)
+print yo
